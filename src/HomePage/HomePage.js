@@ -28,7 +28,7 @@ return (
     <a href = "#"> List of Characters </a>
     <a href = "#">  Featured Episodes</a>
     <a href = "#"> Gallery </a>
-    <a href = "#"> News </a>
+    <a href = "#"> Noticias </a>
     
     
     </ul>

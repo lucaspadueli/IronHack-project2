@@ -1,40 +1,32 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./CharactersListPgOne.css"
 
-function CharactersListPgOne() {
-  const [characters, setCharacters] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://rickandmortyapi.com/api/character")
-      .then((response) => {
-        setCharacters(response.data.results);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+function CharactersListPgOne({characters}) {
+ 
   return (
     <div className="characters-container">
       <h2> List of Characters: </h2>
       <p id="pages"> page 1</p>
+      <Link to = "/"> <button className="btn btn-primary"> Home Page </button> </Link>
       <ul className="list-group c-list">
-        {characters.map((character) => {
+      
+        {!characters ? <div> Loading... </div> : characters.map((character) => {
           return (
             <li className="list-group-item list-group-item-success">
               {" "}
               <h4> {character.name} </h4>
               <p> Species: {character.species}</p>
-              <button
+              <Link to = {`/characters/${character.id}`}> <button
                 type="button"
                 className="btn btn-danger"
                 data-bs-toggle="button"
               >
                 <span>Show {character.name } </span> <span> Info</span>
-              </button>
+              </button> </Link>
             </li>
           );
-        })}
+        })} 
       </ul>
     </div>
   );

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import "./HomePage.css"
 import rickHomeImg from "../images/rick-home.webp"
 import mortyHomeImg from "../images/Morty-home.webp"
@@ -25,11 +26,10 @@ return (
     
     <ul className="nav-list"> 
     
-    <a href = "#"> List of Characters </a>
-    <a href = "#">  Featured Episodes</a>
-    <a href = "#"> Gallery </a>
-    <a href = "#"> News </a>
-    
+    <li> <Link to = "/characters"> List Of Characters </Link> </li>
+    <li> <Link to = ""> Featured Episodes </Link> </li>
+    <li> <Link to = "/"> Gallery </Link> </li>
+    <li> <Link to = "/"> News </Link> </li>
     
     </ul>
     </nav>

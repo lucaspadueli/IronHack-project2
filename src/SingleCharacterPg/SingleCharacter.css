@@ -1,0 +1,41 @@
+.card-img-top{
+    width: 30vw;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.list-group {
+
+width: 50vw;
+margin: 2vh auto;
+text-align: center;
+border-radius: 25px;
+margin-bottom: 20vh;
+}
+
+.card-title{
+    display: inline-block;
+    color: white;
+    font-family:'Alkatra', cursive; 
+}
+
+.card {
+    background-image: url("../images/single-char.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    padding-top: 10vh;
+}
+
+.btn-primary{
+
+    background-color:#13c33f ;
+    width:10vw;
+    margin-left: 10vw;
+    border: 1px solid rgb(168, 168, 168);
+    border-radius: 20px;
+}
+
+a{
+    text-decoration: none;
+}

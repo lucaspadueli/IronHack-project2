@@ -21,8 +21,14 @@ function SingleCharacter({ characters }) {
         <h3> char not found</h3>
       ) : (
         <div className="card" key={selectedChar.id}>
-       <Link to = "/characters" > <button className="btn btn-primary"> Characters List </button></Link>
-       <Link to = "/" > <button className="btn btn-primary"> Home Page </button></Link>
+          <Link to="/characters">
+            {" "}
+            <button className="btn btn-primary"> Characters List </button>
+          </Link>
+          <Link to="/">
+            {" "}
+            <button className="btn btn-primary"> Home Page </button>
+          </Link>
           <img
             className="card-img-top"
             src={selectedChar.image}
@@ -36,7 +42,7 @@ function SingleCharacter({ characters }) {
               {" "}
               Species: {selectedChar.species}{" "}
             </li>
-            <li className="list-group-item"> Type: {selectedChar.type} </li>
+
             <li className="list-group-item"> Gender: {selectedChar.gender} </li>
             <li className="list-group-item">
               {" "}
@@ -47,6 +53,10 @@ function SingleCharacter({ characters }) {
               Location: {selectedChar.location.name}
             </li>
             <li className="list-group-item"> Status: {selectedChar.status}</li>
+            <li className="list-group-item">
+              {" "}
+              Created: {selectedChar.created}{" "}
+            </li>
           </ul>
         </div>
       )}

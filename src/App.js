@@ -5,6 +5,7 @@ import HomePage from "./HomePage/HomePage"
 import { useState,useEffect } from 'react';
 import SingleCharacter from './SingleCharacterPg/SingleCharacter';
 import axios from 'axios';
+import Footer from './Footer/Footer';
 
 
 
@@ -27,6 +28,7 @@ function App() {
         <Route path = "/characters" element = {<CharactersListPgOne characters = {characters}/>}/>
         <Route path = "/characters/:charId" element = {<SingleCharacter characters = {characters} />} />
       </Routes>
+      <Footer />
       
     </div>
   );

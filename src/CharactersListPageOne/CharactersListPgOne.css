@@ -1,10 +1,14 @@
+body, html {
+  height: 100%;
+}
+
+
 .c-list{
   width: 40%;
   margin-left: -10vw;
   margin-top: 1px;
- max-height: 80vh;
+  max-height: 70vh;
   overflow: auto;
-  
 }
 
 .list-group-item{
@@ -12,9 +16,7 @@
   flex-direction: column;
   align-items: center;
  
-  
 }
-
 
 
 h2{
@@ -24,11 +26,7 @@ h2{
 }
 
 
-.characters-container{
-  background-image: url("./../images/r&m.png");
-  background-size:cover;
-  height: 100vh;
-}
+
 #pages{
   color: white;
   margin-left: 48vw;
@@ -45,3 +43,16 @@ h2{
   width: fit-content;
   margin-left: 15vw;
 }
+
+
+.characters-container {
+  min-height: 100vh;
+  background-image: url("./../images/r&m.png");
+  background-attachment: fixed;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+

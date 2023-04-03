@@ -5,8 +5,7 @@ import HomePage from "./HomePage/HomePage"
 import { useState,useEffect } from 'react';
 import SingleCharacter from './SingleCharacterPg/SingleCharacter';
 import axios from 'axios';
-
-
+import FeaturedEpisodes from './FeaturedEpisodes/FeaturedEpisodes';
 
 function App() { 
   const [characters, setCharacters] = useState([]);
@@ -26,6 +25,7 @@ function App() {
         <Route path="/" element={<HomePage  />} />
         <Route path = "/characters" element = {<CharactersListPgOne characters = {characters}/>}/>
         <Route path = "/characters/:charId" element = {<SingleCharacter characters = {characters} />} />
+        <Route path = "/featured-episodes" element = {<FeaturedEpisodes/>}/>
       </Routes>
       
     </div>

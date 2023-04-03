@@ -21,7 +21,7 @@ function SingleCharacter({ characters }) {
         <h3> char not found</h3>
       ) : (
         <div className="card" key={selectedChar.id}>
-       <Link to = "/characters" > <button className="btn btn-primary"> Back </button></Link>
+       <Link className="back-link"  to = "/characters" > <button className="btn btn-primary"> Back </button></Link>
           <img
             className="card-img-top"
             src={selectedChar.image}

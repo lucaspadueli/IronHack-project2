@@ -26,18 +26,10 @@ return (
     
     <ul className="nav-list"> 
     
-<<<<<<< HEAD
     <li> <Link to = "/characters"> List Of Characters </Link> </li>
-    <li> <Link to = ""> Featured Episodes </Link> </li>
+    <li> <Link to = "/"> Featured Episodes </Link> </li>
     <li> <Link to = "/"> Gallery </Link> </li>
     <li> <Link to = "/"> News </Link> </li>
-=======
-    <a href = "#"> List of Characters </a>
-    <a href = "#">  Featured Episodes</a>
-    <a href = "#"> Gallery </a>
-    <a href = "#"> Noticias </a>
-    
->>>>>>> c6c7e00e03bb2e63e7ea5fcedae9ea7008937f84
     
     </ul>
     </nav>

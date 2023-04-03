@@ -130,3 +130,8 @@ box-sizing: border-box;
     padding-top: 2.5vh;
     
 }
+
+.featured-characters-div{
+    width: fit-content;
+    margin-left: 17vw;
+  }

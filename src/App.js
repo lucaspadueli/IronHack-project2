@@ -5,9 +5,9 @@ import HomePage from "./HomePage/HomePage";
 import { useState, useEffect } from "react";
 import SingleCharacter from "./SingleCharacterPg/SingleCharacter";
 import FeaturedEpisodes from "./FeaturedEpisodes/FeaturedEpisodes";
-
 function App() {
   const [characters, setCharacters] = useState([]);
+  const [originalCharacters, setOriginalCharacters] = useState(characters);
   useEffect(() => {
     const fetchData = async () => {
      try{
@@ -81,23 +81,35 @@ function App() {
     
      const allCharacters = [...page1Data.results, ...page2Data.results, ...page3Data.results, ...page4Data.results, ...page5Data.results, ...page6Data.results, ...page7Data.results, ...page8Data.results, ...page9Data.results, ...page10Data.results];
 
-     setCharacters(allCharacters);
+     setOriginalCharacters(allCharacters);
+      setCharacters(allCharacters);
     } catch (err){
       console.log(err);
      }
       
     };
     fetchData();
+
   }, []); 
 
+  function handleSearch (text) {
+    if (text === ''){
+      setCharacters(originalCharacters)
+    }
+    else {
+      const filteredCharacters = characters.filter((character)=> character.name.toLowerCase().includes(text.toLowerCase()));
+      setCharacters(filteredCharacters)
+    }
+  }
 
   return (
     <div className="App">
+      
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route
           path="/characters"
-          element={<CharactersListPgOne characters={characters} />}
+          element={ <CharactersListPgOne characters={characters}  onSearch = {handleSearch}/> }
         />
         <Route
           path="/characters/:charId"

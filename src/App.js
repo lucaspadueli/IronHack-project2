@@ -1,10 +1,12 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Routes, Route } from "react-router-dom";
-import CharactersListPgOne from "./CharactersListPageOne/CharactersListPgOne";
-import HomePage from "./HomePage/HomePage";
-import { useState, useEffect } from "react";
-import SingleCharacter from "./SingleCharacterPg/SingleCharacter";
-import FeaturedEpisodes from "./FeaturedEpisodes/FeaturedEpisodes";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Routes, Route } from 'react-router-dom';
+import CharactersListPgOne from "./CharactersListPageOne/CharactersListPgOne"
+import HomePage from "./HomePage/HomePage"
+import { useState,useEffect } from 'react';
+import SingleCharacter from './SingleCharacterPg/SingleCharacter';
+import Footer from './Footer/Footer';
+import FeaturedEpisodes from './FeaturedEpisodes/FeaturedEpisodes';
+
 function App() {
   const [characters, setCharacters] = useState([]);
   const [originalCharacters, setOriginalCharacters] = useState(characters);
@@ -117,6 +119,8 @@ function App() {
         />
         <Route path="/featured-episodes" element={<FeaturedEpisodes />} />
       </Routes>
+      <Footer />
+      
     </div>
   );
 }

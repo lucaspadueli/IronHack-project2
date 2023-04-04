@@ -1,0 +1,22 @@
+.main-footer {
+    color: white;
+    background-color: purple;
+    padding-top: 3em;
+    position: relative;
+    bottom: 0;
+
+}
+
+.main-footer h4 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+}
+
+.col-sm {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+
+}

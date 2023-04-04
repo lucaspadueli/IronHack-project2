@@ -37,7 +37,7 @@ function SingleCharacter({ characters }) {
           <div className="card-body">
             <h2 className="card-title"> {selectedChar.name} </h2>
           </div>
-          <ul className="list-group list-group-flush">
+          <ul className="list-group list-group-flush list-group-single">
             <li className="list-group-item">
               {" "}
               Species: {selectedChar.species}{" "}

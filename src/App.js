@@ -81,7 +81,7 @@ function App() {
     
      const allCharacters = [...page1Data.results, ...page2Data.results, ...page3Data.results, ...page4Data.results, ...page5Data.results, ...page6Data.results, ...page7Data.results, ...page8Data.results, ...page9Data.results, ...page10Data.results];
 
-     setOriginalCharacters(allCharacters);
+      setOriginalCharacters(allCharacters);
       setCharacters(allCharacters);
     } catch (err){
       console.log(err);
@@ -106,7 +106,7 @@ function App() {
     <div className="App">
       
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage/>} />
         <Route
           path="/characters"
           element={ <CharactersListPgOne characters={characters}  onSearch = {handleSearch}/> }

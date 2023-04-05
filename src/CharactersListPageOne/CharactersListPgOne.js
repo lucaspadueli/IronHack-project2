@@ -1,10 +1,22 @@
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./CharactersListPgOne.css"
+import { useState} from 'react';
 import SearchBar from '../SearchBar';
 
-function CharactersListPgOne({characters, onSearch}) {
- 
+function CharactersListPgOne({characters}) {
+ const[filteredCharacters,setFilteredCharacters] = useState(characters);
+  
+ function handleSearch(text) {
+  if(text === '') {
+    setFilteredCharacters(characters)
+  }
+  else{
+    const filteredChars = filteredCharacters.filter((character)=> character.name.toLowerCase().includes(text.toLowerCase()))
+    setFilteredCharacters(filteredChars)
+  }
+}
+
   return (
     <div className="characters-container">
      <div className='list-header'> 
@@ -13,7 +25,7 @@ function CharactersListPgOne({characters, onSearch}) {
       <Link to = "/"> <button className="btn btn-primary"> Home Page </button> </Link>
      </div>
       
-     <SearchBar onSearch={onSearch} />
+     <SearchBar onSearch={handleSearch} />
      
      
      

@@ -96,7 +96,7 @@ function App() {
 
   function handleSearch (text) {
     if (text === ''){
-      setCharacters(originalCharacters)
+      setCharacters(originalCharacters);
     }
     else {
       const filteredCharacters = characters.filter((character)=> character.name.toLowerCase().includes(text.toLowerCase()));

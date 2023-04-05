@@ -1,10 +1,28 @@
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./CharactersListPgOne.css"
-import SearchBar from '../SearchBar';
+import { useState} from 'react';
 
-function CharactersListPgOne({characters, onSearch}) {
- 
+
+function CharactersListPgOne({characters}) {
+const [filteredCharacters,setFilteredCharacters] = useState(characters);
+  const [searchText,setSearchText] = useState('');
+
+  function handleSearch (searchText) {
+    if(searchText === ''){
+      setFilteredCharacters(characters)
+    }
+    else{
+      const filtered = (characters.filter((character)=> character.name.toLowerCase().includes(searchText.toLowerCase())))
+      setFilteredCharacters(filtered);
+    }
+}
+function handleSearchTextChange(event){
+  const text = event.target.value;
+  setSearchText(text);
+  handleSearch(text)
+}
+
   return (
     <div className="characters-container">
      <div className='list-header'> 
@@ -13,13 +31,20 @@ function CharactersListPgOne({characters, onSearch}) {
       <Link to = "/"> <button className="btn btn-primary"> Home Page </button> </Link>
      </div>
       
-     <SearchBar onSearch={onSearch} />
+     <div>
+
+    <label>
+      Search:
+      <input type = "text" name = "search" value = {searchText} onChange = {handleSearchTextChange} />
+    </label>
+
+     </div>
      
      
      
       <ul className="list-group c-list">
       
-        {!characters ? <div> Loading... </div> : characters.map((character) => {
+        {!filteredCharacters ? <div> Loading... </div> : filteredCharacters.map((character) => {
           return (
             <li key = {character.id} className="list-group-item list-group-item-success">
               {" "}

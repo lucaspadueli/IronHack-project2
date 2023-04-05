@@ -2,6 +2,7 @@ import "./SingleCharacter.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 function SingleCharacter({ characters }) {
@@ -12,7 +13,10 @@ function SingleCharacter({ characters }) {
     const character = characters.find((character) => {
       return character.id === parseInt(charId, 10);
     });
-    if (character) setSelectedChar(character);
+    if (character){
+      axios.get(`https://rickandmortyapi.com/api/character?page=${character.id}`)
+      .then(response => setSelectedChar(character))
+    } 
   }, [charId, characters]);
 
   return (
@@ -20,6 +24,7 @@ function SingleCharacter({ characters }) {
       {!selectedChar ? (
         <h3> char not found</h3>
       ) : (
+        
         <div className="card" key={selectedChar.id}>
           <Link to="/characters">
             {" "}

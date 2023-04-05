@@ -1,26 +1,30 @@
 import "./SingleCharacter.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
-function SingleCharacter({ characters }) {
+function SingleCharacter() {
+  const [character,setCharacter] = useState(null)
   const { charId } = useParams();
-  const [selectedChar, setSelectedChar] = useState(null);
 
-  useEffect(() => {
-    const character = characters.find((character) => {
-      return character.id === parseInt(charId, 10);
-    });
-    if (character) setSelectedChar(character);
-  }, [charId, characters]);
+ useEffect(()=> {
+  axios.get(`https://rickandmortyapi.com/api/character/${charId}`)
+  .then(response => setCharacter(response.data))
+  .catch(err=> console.log(err));
+
+ },[charId])
+
 
   return (
     <div className="single-char-page">
-      {!selectedChar ? (
-        <h3> char not found</h3>
+      {!character ? (
+        <h3>Loading</h3>
       ) : (
-        <div className="card" key={selectedChar.id}>
+        
+        <div className="card" key={character.id}>
           <Link to="/characters">
             {" "}
             <button className="btn btn-primary"> Characters List </button>
@@ -31,31 +35,31 @@ function SingleCharacter({ characters }) {
           </Link>
           <img
             className="card-img-top"
-            src={selectedChar.image}
+            src={character.image}
             alt="character"
           />
           <div className="card-body">
-            <h2 className="card-title"> {selectedChar.name} </h2>
+            <h2 className="card-title"> {character.name} </h2>
           </div>
-          <ul className="list-group list-group-flush">
+          <ul className="list-group list-group-flush list-group-single">
             <li className="list-group-item">
               {" "}
-              Species: {selectedChar.species}{" "}
+              Species: {character.species}{" "}
             </li>
 
-            <li className="list-group-item"> Gender: {selectedChar.gender} </li>
+            <li className="list-group-item"> Gender: {character.gender} </li>
             <li className="list-group-item">
               {" "}
-              Origin: {selectedChar.origin.name}{" "}
+              Origin: {character.origin.name}{" "}
             </li>
             <li className="list-group-item">
               {" "}
-              Location: {selectedChar.location.name}
+              Location: {character.location.name}
             </li>
-            <li className="list-group-item"> Status: {selectedChar.status}</li>
+            <li className="list-group-item"> Status: {character.status}</li>
             <li className="list-group-item">
               {" "}
-              Created: {selectedChar.created}{" "}
+              Created: {character.created}{" "}
             </li>
           </ul>
         </div>

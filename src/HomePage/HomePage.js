@@ -29,7 +29,7 @@ return (
     <li> <Link to = "/characters"> List Of Characters </Link> </li>
     <li> <Link to = "/featured-episodes"> Featured Episodes </Link> </li>
     <li> <Link to = "/"> Gallery </Link> </li>
-    <li> <Link to = "/"> News </Link> </li>
+    <li> <Link to = "/news"> News </Link> </li>
     
     </ul>
     </nav>

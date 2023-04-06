@@ -10,7 +10,7 @@ const NewsPage = () => {
 
             <Link to="/" > <button className="btn btn-primary news-buttons"> Home Page </button></Link>
 
-            <h1> Rick and Morty </h1>
+            <h1 id = "h1-news"> Rick and Morty </h1>
             <p className="first-news">
                 {" "}
                 The animated sci-fi comedy “Rick and Morty” will recast its title roles after severing ties with Justin Roiland,

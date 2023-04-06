@@ -6,6 +6,7 @@ import { useState,useEffect } from 'react';
 import SingleCharacter from './SingleCharacterPg/SingleCharacter';
 import Footer from './Footer/Footer';
 import FeaturedEpisodes from './FeaturedEpisodes/FeaturedEpisodes';
+import NewsPage from './NewsPage/NewsPage';
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -118,6 +119,7 @@ function App() {
           element={<SingleCharacter characters={characters} />}
         />
         <Route path="/featured-episodes" element={<FeaturedEpisodes />} />
+        <Route path="/news" element={<NewsPage />} />
       </Routes>
       <Footer />
       

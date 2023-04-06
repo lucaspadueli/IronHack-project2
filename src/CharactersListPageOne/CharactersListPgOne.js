@@ -23,6 +23,31 @@ function handleSearchTextChange(event){
   handleSearch(text)
 }
 
+
+
+function handleCategoryChange (e) {
+ const selectedCategory = e.target.value;
+ let charactersToFilter = [...characters];
+
+
+ if(selectedCategory.toLowerCase() === "human"){
+  var filteredSpecies = charactersToFilter.filter((character)=> character.species.toLowerCase()=== "human")
+ }
+ else if(selectedCategory.toLowerCase()==="alien"){
+  filteredSpecies = charactersToFilter.filter((character)=> character.species.toLowerCase() === "alien")
+ }
+ else if (selectedCategory.toLowerCase()=== "others"){
+  filteredSpecies = charactersToFilter.filter((character)=> character.species.toLowerCase()!== "alien" && character.species.toLowerCase()!== "human")
+ }
+  else if(selectedCategory.toLowerCase()=== "all"){
+    filteredSpecies = characters;
+  }
+  setFilteredCharacters(filteredSpecies);
+}
+
+
+
+
   return (
     <div className="characters-container">
      <div className='list-header'> 
@@ -37,6 +62,21 @@ function handleSearchTextChange(event){
       Search:
       <input type = "text" name = "search" value = {searchText} onChange = {handleSearchTextChange} />
     </label>
+
+    
+  <div className="form-row align-items-center">
+    <div className="col-auto my-1">
+      <label className="mr-sm-2" htmlFor="inlineFormCustomSelect">Sort by:</label>
+      <select className="custom-select mr-sm-2" id="inlineFormCustomSelect" onChange = {handleCategoryChange}>
+        <option value="">Select a species</option>
+        <option value = "all"> All </option>
+        <option value="human">Humans</option>
+        <option value="alien">Aliens</option>
+        <option value="others">Others</option>
+      </select>
+     </div>
+     </div> 
+     
 
      </div>
      

@@ -10,7 +10,7 @@ import NewsPage from './NewsPage/NewsPage';
 
 function App() {
   const [characters, setCharacters] = useState([]);
-  const [originalCharacters, setOriginalCharacters] = useState(characters);
+  
   useEffect(() => {
     const fetchData = async () => {
      try{
@@ -84,7 +84,7 @@ function App() {
     
      const allCharacters = [...page1Data.results, ...page2Data.results, ...page3Data.results, ...page4Data.results, ...page5Data.results, ...page6Data.results, ...page7Data.results, ...page8Data.results, ...page9Data.results, ...page10Data.results];
 
-      setOriginalCharacters(allCharacters);
+     
       setCharacters(allCharacters);
     } catch (err){
       console.log(err);
@@ -95,15 +95,7 @@ function App() {
 
   }, []); 
 
-  function handleSearch (text) {
-    if (text === ''){
-      setCharacters(originalCharacters)
-    }
-    else {
-      const filteredCharacters = characters.filter((character)=> character.name.toLowerCase().includes(text.toLowerCase()));
-      setCharacters(filteredCharacters)
-    }
-  }
+
 
   return (
     <div className="App">
@@ -112,7 +104,7 @@ function App() {
         <Route path="/" element={<HomePage/>} />
         <Route
           path="/characters"
-          element={ <CharactersListPgOne characters={characters}  onSearch = {handleSearch}/> }
+          element={ <CharactersListPgOne characters={characters} /> }
         />
         <Route
           path="/characters/:charId"

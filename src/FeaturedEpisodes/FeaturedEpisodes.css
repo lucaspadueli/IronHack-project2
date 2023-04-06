@@ -10,11 +10,11 @@ padding-bottom: 35vh;
 
 .episode-description {
     width: 63%;
-    margin:  auto ;
+    margin: 2vh auto ;
     font-size: 1.5em;
     font-weight: 300;
-    color: rgb(255, 255, 255);
-    background-color: rgb(0, 0, 0);
+    color: rgb(102, 86, 86);
+    background-color: rgba(253, 249, 249,0.8);
     border-radius: 25px;
     box-sizing:border-box;
     padding: 20px;
@@ -31,3 +31,4 @@ padding-bottom: 35vh;
     color: rgb(75, 236, 107);
     margin-bottom: 2vh;
 }
+

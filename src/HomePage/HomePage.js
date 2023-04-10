@@ -13,18 +13,6 @@ return (
 
 <div className="home-page">
     
-    <nav id="home-nav-bar"> 
-    
-    <ul className="nav-list"> 
-    
-    <li> <Link to = "/characters"> List Of Characters </Link> </li>
-    <li> <Link to = "/featured-episodes"> Featured Episodes </Link> </li>
-    <li> <Link to = "/gallery"> Gallery </Link> </li>
-    <li> <Link to = "/news"> News </Link> </li>
-    
-    </ul>
-    </nav>
-
         <h1> The Ultimate Rick and Morty Guide </h1>
         
         <h2> Featured Characters</h2>

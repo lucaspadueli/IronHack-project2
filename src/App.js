@@ -4,6 +4,7 @@ import CharactersListPgOne from "./CharactersListPageOne/CharactersListPgOne"
 import HomePage from "./HomePage/HomePage"
 import { useState,useEffect } from 'react';
 import SingleCharacter from './SingleCharacterPg/SingleCharacter';
+import NavBar from './NavBar/NavBar';
 import Footer from './Footer/Footer';
 import FeaturedEpisodes from './FeaturedEpisodes/FeaturedEpisodes';
 import GalleryPage from './Gallery/GalleryPage';
@@ -100,7 +101,7 @@ function App() {
 
   return (
     <div className="App">
-      
+      <NavBar />
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route

@@ -1,0 +1,33 @@
+#home-nav-bar{
+    position: absolute;
+    background-color: #8842b9;
+    height: 10vh;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 15px;
+    font-size: 1.2em;
+        
+}
+
+.nav-list{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-right: 3vw;
+    
+}
+
+.nav-list a{
+    color: white;
+    text-decoration: none;
+    margin-top:3vh;
+    margin-left: 3vw;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.nav-list li {
+    box-sizing: border-box;
+    padding-top: 2.5vh;
+    
+}
